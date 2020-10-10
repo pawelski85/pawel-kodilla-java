@@ -1,9 +1,9 @@
 package com.kodilla.testing.forum;
-import com.kodilla.testing.user.SimpleUser;
 
+import com.kodilla.testing.user.SimpleUser;
 import org.junit.jupiter.api.*;
 
-class ForumTestSuite {
+public class ForumTestSuite {
     @BeforeEach
     public void before(){
         System.out.println("Test Case: begin");
