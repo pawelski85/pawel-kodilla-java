@@ -3,6 +3,7 @@ package com.kodilla.testing.collection;
 import com.kodilla.testing.collection.OddNumbersExterminator;
 import org.junit.jupiter.api.*;
 
+import java.util.LinkedList;
 import java.util.List;
 
 
@@ -33,28 +34,31 @@ public class CollectionTestSuite {
     void testOddNumbersExterminatorEmptyList(){
         //Given
         OddNumbersExterminator list=new OddNumbersExterminator();
+
         //When
         List<Integer> result =list.getNumbers();
-        Integer expectedResult=0;
+
         //Then
-        Assertions.assertEquals(expectedResult, result.size());
+        Assertions.assertEquals(0, result.size());
     }
     @DisplayName("when create OddNumbersExterminator list" +
             "then getEvenListNumbers should return only even numbers ")
     @Test
     void testOddNumbersExterminatorNormalList(){
         //Given
-        OddNumbersExterminator numbers=new OddNumbersExterminator(9,2,4);
+        OddNumbersExterminator numbers=new OddNumbersExterminator();
+        List<Integer> numbersList=new LinkedList<>();
+        numbersList.add(9);
+        numbersList.add(2);
+        numbersList.add(4);
+
         //When
-        List<Integer> result=numbers.getNumbers();
-        Integer expectedResult=0;
-        numbers.exterminate(result);
+        numbers.exterminate(numbersList);
         List<Integer> evenListResult=numbers.getEvenListNumbers();
+        int result=evenListResult.size();
+
         //Then
-        for(Integer even:evenListResult) {
-            Assertions.assertEquals(expectedResult, even%2);
-            System.out.println(even);
-        }
+        Assertions.assertEquals(2, result);
     }
 }
 
