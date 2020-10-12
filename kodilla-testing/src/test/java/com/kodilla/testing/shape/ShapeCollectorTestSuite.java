@@ -33,8 +33,9 @@ public class ShapeCollectorTestSuite {
         @Test
         void testAddFigure(){
             //Given
-            ShapeCollector figure=new ShapeCollector(new ShapeDrawer(new Circle()));
-            figure.addFigure(new Circle());
+            ShapeCollector figure=new ShapeCollector();
+            Circle circle=new Circle();
+            figure.addFigure(circle);
 
             //When
             int result = figure.getShapeListSize();;
@@ -42,27 +43,57 @@ public class ShapeCollectorTestSuite {
             //Then
             Assertions.assertEquals(1, result);
         }
-        @DisplayName("When removeFigure should add figure to the shapeList")
+        @DisplayName("when create ShapeCollector with figure and add figure to the shapeList, " +
+                "then removeFigure should remove figure from the shapeList")
         @Test
         void testRemoveFigure(){
             //Given
-            ShapeCollector figure=new ShapeCollector(new ShapeDrawer(new Circle()));
-            figure.addFigure(new Circle());
+            ShapeCollector figure=new ShapeCollector();
+            Circle circle=new Circle();
+            figure.addFigure(circle);
+            figure.removeFigure(circle);
 
             //When
             int result = figure.getShapeListSize();;
-            System.out.println("Shape List contains " + result + " figure");
 
             //Then
-            Assertions.assertEquals(1, result);
+            Assertions.assertEquals(0, result);
         }
+        @DisplayName("when create ShapeCollector with figure and add new figure to the shapeList, " +
+                "then getFigure should get figure from the shapeList")
+        @Test
+        void testGetFigure(){
+            //Given
+            ShapeCollector figure=new ShapeCollector();
+            Circle circle=new Circle();
+            figure.addFigure(circle);
 
+            //When
+            Shape result=figure.getFigure(0);
 
+            //Then
+            Assertions.assertEquals(circle, result);
+        }
+        @DisplayName("when create ShapeCollector with figure and add figures to the shapeList, " +
+                "then showFigures should show all figures from the shapeList in one String")
+        @Test
+        void testShowFigures(){
+            //Given
+            ShapeCollector figure=new ShapeCollector();
+            Circle circle=new Circle();
+            Square square=new Square();
+            Triangle triangle=new Triangle();
+            figure.addFigure(circle);
+            figure.addFigure(square);
+            figure.addFigure(triangle);
 
+            //When
+            String result=figure.showFigures();
+            String expectedResult="[circle, square, triangle]";
 
-
-
-
+            //Then
+            Assertions.assertEquals(expectedResult, result);
+        }
 
     }
 
