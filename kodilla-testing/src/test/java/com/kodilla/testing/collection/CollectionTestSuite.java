@@ -3,6 +3,8 @@ package com.kodilla.testing.collection;
 import com.kodilla.testing.collection.OddNumbersExterminator;
 import org.junit.jupiter.api.*;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -34,9 +36,10 @@ public class CollectionTestSuite {
     void testOddNumbersExterminatorEmptyList(){
         //Given
         OddNumbersExterminator list=new OddNumbersExterminator();
+        ArrayList<Integer> numbers = new ArrayList<>();
 
         //When
-        List<Integer> result =list.getNumbers();
+        List<Integer> result =list.exterminate(numbers);
 
         //Then
         Assertions.assertEquals(0, result.size());
@@ -51,14 +54,18 @@ public class CollectionTestSuite {
         numbersList.add(9);
         numbersList.add(2);
         numbersList.add(4);
+        LinkedList<Integer> expectedNumbersList = new LinkedList<>();
+        expectedNumbersList.add(2);
+        expectedNumbersList.add(4);
 
+        List<Integer> anotherExpectedNumbers = Arrays.asList(2, 4);
         //When
-        numbers.exterminate(numbersList);
-        List<Integer> evenListResult=numbers.getEvenListNumbers();
+        List<Integer> evenListResult = numbers.exterminate(numbersList);
         int result=evenListResult.size();
 
         //Then
         Assertions.assertEquals(2, result);
+        Assertions.assertEquals(expectedNumbersList,evenListResult);
     }
 }
 
