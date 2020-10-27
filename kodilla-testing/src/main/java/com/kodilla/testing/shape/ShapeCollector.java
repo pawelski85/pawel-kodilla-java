@@ -1,10 +1,6 @@
 package com.kodilla.testing.shape;
 import java.util.ArrayList;
 
-interface Shape {
-    String getShapeName();
-    void getField();
-}
 public class ShapeCollector {
 
     private ArrayList<Shape> shapeList=new ArrayList<>();
@@ -24,52 +20,6 @@ public class ShapeCollector {
     }
     public int getShapeListSize(){
         return shapeList.size();
-    }
-}
-
-class Circle implements Shape{
-    String name="circle";
-    @Override
-    public String getShapeName() {
-        return name;
-    }
-    @Override
-    public void getField() {
-    }
-
-    @Override
-    public String toString() {
-        return name;
-    }
-}
-class Square implements Shape {
-    String name="square";
-    @Override
-    public String getShapeName() {
-        return name;
-    }
-    @Override
-    public void getField() {
-    }
-
-    @Override
-    public String toString() {
-        return name;
-    }
-}
-class Triangle implements Shape {
-    String name="triangle";
-    @Override
-    public String getShapeName() {
-        return name;
-    }
-    @Override
-    public void getField() {
-    }
-
-    @Override
-    public String toString() {
-        return name;
     }
 }
 

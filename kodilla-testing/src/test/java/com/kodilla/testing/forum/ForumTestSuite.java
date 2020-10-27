@@ -38,18 +38,16 @@ public class ForumTestSuite {
         Assertions.assertEquals("John Smith", result);
     }
 
-    @DisplayName("when create SimpleUser with name, " +
+    @DisplayName("when create SimpleUser with user name, " +
             "then getUsername should return correct name"
     )
     @Test
     void testCaseUsername() {
         //Given
         SimpleUser simpleUser = new SimpleUser("theForumUser", "John Smith");
-
-        String expectedResult = "theForumUser";
-
         //When
         String result = simpleUser.getUsername();
+        String expectedResult = "theForumUser";
         //Then
         Assertions.assertEquals(expectedResult, result);
     }

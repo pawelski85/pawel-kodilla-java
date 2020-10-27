@@ -1,2 +1,7 @@
-package com.kodilla.testing.shape;public class Shape {
+package com.kodilla.testing.shape;
+
+interface Shape {
+    String getShapeName();
+
+    void getField();
 }

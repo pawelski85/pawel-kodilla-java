@@ -1,5 +1,7 @@
 package com.kodilla.testing.forum.tdd;
 
+import com.kodilla.testing.collection.OddNumbersExterminator;
+
 import java.util.ArrayList;
 import java.util.LinkedList;
 
