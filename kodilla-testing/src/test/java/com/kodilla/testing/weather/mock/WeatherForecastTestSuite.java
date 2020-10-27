@@ -129,4 +129,5 @@ class WeatherForecastTestSuite {
         //Then
         Assertions.assertEquals(25.8, resultEven, 0.01);
     }
+
 }

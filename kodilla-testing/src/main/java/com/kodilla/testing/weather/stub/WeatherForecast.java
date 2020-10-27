@@ -39,4 +39,5 @@ public class WeatherForecast {
             return resultMap.get(tempIndex);
         }
     }
+
 }
