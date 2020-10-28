@@ -75,14 +75,10 @@ class WeatherForecastTestSuite {
         WeatherForecast weatherForecast = new WeatherForecast(temperaturesMock);
 
         //When
-        double average = 0;
-        for (Map.Entry<String, Double> tempMap : weatherForecast.calculateForecast().entrySet()) {
-            average += tempMap.getValue();
-        }
-        double result = average / temperaturesMap.size();
+        double result=weatherForecast.calculateAverageTemperature();
 
         //Then
-        Assertions.assertEquals(26.56, result, 0.01);
+        Assertions.assertEquals(25.56, result, 0.01);
     }
 
     @DisplayName("when create OddTemperaturesMapOdd with odd number of sensors data, " +
