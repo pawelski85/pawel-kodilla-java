@@ -22,18 +22,10 @@ public class BookLibrary {
         return bookList;
     }
 
-    public List<Book> listBooksInHandsOf2(LibraryUser libraryUser, Map<LibraryUser,Book> booksMap) {
-        List<Book> resultBooks = new ArrayList<>();
-        List<Book> resultBooks2 = libraryDatabase.listBooksInHandsOf(libraryUser);
-        if(booksMap.containsKey(libraryUser)){
-            for(Map.Entry<LibraryUser,Book> book:booksMap.entrySet()){
-                resultBooks.add(book.getValue());
-            }
-            return resultBooks2;
-        }
+    public List<Book> listBooksInHandsOf(LibraryUser libraryUser) {
+        List<Book> resultBooks = libraryDatabase.listBooksInHandsOf(libraryUser);
         return resultBooks;
     }
-
 }
 
 
