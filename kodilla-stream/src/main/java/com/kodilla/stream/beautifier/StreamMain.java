@@ -9,7 +9,13 @@ public class StreamMain {
         poemBeautifier.beautify("ABC",(tekst)-> System.out.println(tekst.toLowerCase()));
         poemBeautifier.beautify("Pawel",(tekst)-> System.out.println(tekst+ "Tomczyk"));
         poemBeautifier.beautify("Harry",(tekst)-> System.out.println(tekst+"Potter"));
-        poemBeautifier.beautify("abc",(tekst)-> System.out.println("123"+tekst));
+        poemBeautifier.beautify("abc",(String tekst)-> System.out.println("123"+tekst));
+        poemBeautifier.beautify("jakis", new PoemDecorator() {
+            @Override
+            public void decorate(String tekst) {
+                System.out.println(tekst+" upiekszacz");
+            }
+        });
 
     }
 }
