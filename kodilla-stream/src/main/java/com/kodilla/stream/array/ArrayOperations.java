@@ -1,6 +1,6 @@
 package com.kodilla.stream.array;
 
-import jdk.nashorn.internal.runtime.arrays.IteratorAction;
+//import jdk.nashorn.internal.runtime.arrays.IteratorAction;
 
 import java.util.Iterator;
 import java.util.stream.IntStream;
