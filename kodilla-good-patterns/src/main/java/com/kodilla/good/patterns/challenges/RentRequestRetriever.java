@@ -4,11 +4,17 @@ import java.time.LocalDateTime;
 
 public class RentRequestRetriever {
     public RentRequest retrieve(){
-        User user = new User("John", "Wekl");
+        Client client = new Client("John", "Wekl");
 
-        LocalDateTime rentFrom = LocalDateTime.of(2017, 8,1,12,0);
-        LocalDateTime rentTo = LocalDateTime.of(2017, 8,10,12,0);
+        LocalDateTime orderedWhen = LocalDateTime.of(2017, 8,1,12,0);
 
-        return new RentRequest(user,rentFrom,rentTo);
+        Product product = new Wine("Rudolf Muller",100);
+        Product product1 = new Chocolate("Laderach",200);
+
+        Basket basket = new Basket();
+        basket.products.add(product);
+        basket.products.add(product1);
+
+        return new RentRequest(client,orderedWhen,basket);
     }
 }

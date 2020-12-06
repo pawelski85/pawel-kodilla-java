@@ -1,7 +1,5 @@
 package com.kodilla.good.patterns.challenges;
 
-import java.util.Random;
-
 public class RentalProcessor {
     private InformationService informationService;
     private RentalService rentalService;
@@ -14,10 +12,10 @@ public class RentalProcessor {
     }
 
     public RentalDto process(final RentRequest rentRequest) {
-        boolean isRented = rentalService.rent(rentRequest.getUser(), rentRequest.getFrom(), rentRequest.getTo());
+        boolean isRented = rentalService.rent(rentRequest.getUser(), rentRequest.getWhen(), rentRequest.getBasket());
         if(isRented) {
-            informationService.inform(rentRequest.getUser());
-            rentalRepository.createRental(rentRequest.getUser(),rentRequest.getFrom(), rentRequest.getTo());
+            informationService.inform(rentRequest.getUser(), rentRequest.getBasket());
+            rentalRepository.createRental(rentRequest.getUser(),rentRequest.getWhen(), rentRequest.getBasket());
             return new RentalDto(rentRequest.getUser(),true);
         }
         else{

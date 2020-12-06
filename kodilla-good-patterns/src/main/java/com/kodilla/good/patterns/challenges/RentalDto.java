@@ -1,15 +1,15 @@
 package com.kodilla.good.patterns.challenges;
 
 public class RentalDto {
-    public User user;
+    public Client client;
     public boolean isRented;
 
-    public RentalDto(final User user, final boolean isRented){
-        this.user = user;
+    public RentalDto(final Client client, final boolean isRented){
+        this.client = client;
         this.isRented = isRented;
     }
-    public User getUser(){
-        return user;
+    public Client getUser(){
+        return client;
     }
     public boolean isRented(){ return isRented;
     }

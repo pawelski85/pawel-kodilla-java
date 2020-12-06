@@ -1,10 +1,10 @@
 package com.kodilla.good.patterns.challenges;
 
-public class User {
+public class Client {
     private String name;
     private String surname;
 
-    public User(String name, String surname) {
+    public Client(String name, String surname) {
         this.name = name;
         this.surname = surname;
     }
@@ -27,9 +27,8 @@ public class User {
 
     @Override
     public String toString() {
-        return "User{" +
+        return "Client " +
                 "name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
-                '}';
+                ", surname='" + surname + '\'';
     }
 }

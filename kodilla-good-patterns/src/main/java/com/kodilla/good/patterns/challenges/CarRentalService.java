@@ -5,8 +5,8 @@ import java.time.LocalDateTime;
 public class CarRentalService implements RentalService{
 
     @Override
-    public boolean rent(User user, LocalDateTime from, LocalDateTime to) {
-        System.out.println("Rented from "+from+" "+"to "+to);
+    public boolean rent(Client client, LocalDateTime when, Basket basket) {
+        System.out.println("Ordered "+when);
         return true;
     }
 }

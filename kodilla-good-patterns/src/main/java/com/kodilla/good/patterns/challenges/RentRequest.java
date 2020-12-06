@@ -3,25 +3,25 @@ package com.kodilla.good.patterns.challenges;
 import java.time.LocalDateTime;
 
 public class RentRequest {
-    private User user;
-    private LocalDateTime from;
-    private LocalDateTime to;
+    private Client client;
+    private LocalDateTime when;
+    private Basket basket;
 
-    public RentRequest(User user, LocalDateTime from, LocalDateTime to) {
-        this.user = user;
-        this.from = from;
-        this.to = to;
+    public RentRequest(Client client, LocalDateTime when, Basket basket) {
+        this.client = client;
+        this.when = when;
+        this.basket = basket;
     }
 
-    public User getUser(){
-        return user;
+    public Client getUser(){
+        return client;
     }
 
-    public LocalDateTime getFrom() {
-        return from;
+    public LocalDateTime getWhen() {
+        return when;
     }
 
-    public LocalDateTime getTo() {
-        return to;
+    public Basket getBasket() {
+        return basket;
     }
 }

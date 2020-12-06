@@ -5,8 +5,8 @@ import java.time.LocalDateTime;
 public class CarRentalRepository implements RentalRepository {
 
     @Override
-    public boolean createRental(User user, LocalDateTime from, LocalDateTime to) {
-        System.out.println("Rental added to repository");;
+    public boolean createRental(Client client, LocalDateTime when, Basket basket) {
+        System.out.println("Order added to repository");;
         return true;
     }
 }
