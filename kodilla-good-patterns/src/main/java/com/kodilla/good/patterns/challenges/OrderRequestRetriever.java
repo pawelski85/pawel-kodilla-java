@@ -2,8 +2,8 @@ package com.kodilla.good.patterns.challenges;
 
 import java.time.LocalDateTime;
 
-public class RentRequestRetriever {
-    public RentRequest retrieve(){
+public class OrderRequestRetriever {
+    public OrderRequest retrieve(){
         Client client = new Client("John", "Wekl");
 
         LocalDateTime orderedWhen = LocalDateTime.of(2017, 8,1,12,0);
@@ -15,6 +15,6 @@ public class RentRequestRetriever {
         basket.products.add(product);
         basket.products.add(product1);
 
-        return new RentRequest(client,orderedWhen,basket);
+        return new OrderRequest(client,orderedWhen,basket);
     }
 }
