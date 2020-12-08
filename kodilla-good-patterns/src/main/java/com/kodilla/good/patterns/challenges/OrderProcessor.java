@@ -11,9 +11,9 @@ public class OrderProcessor {
         this.orderRepository = orderRepository;
     }
 
-    public OrderDto process(final OrderRequest orderRequest) {
-        boolean isRented = orderService.order(orderRequest.getClient(), orderRequest.getWhen(), orderRequest.getBasket());
-        if(isRented) {
+    public OrderDto execute(final OrderRequest orderRequest) {
+        boolean isOrdered = orderService.order(orderRequest.getClient(), orderRequest.getWhen(), orderRequest.getBasket());
+        if(isOrdered) {
             informationService.inform(orderRequest.getClient(), orderRequest.getBasket());
             orderRepository.createOrder(orderRequest.getClient(), orderRequest.getWhen(), orderRequest.getBasket());
             return new OrderDto(orderRequest.getClient(),true);

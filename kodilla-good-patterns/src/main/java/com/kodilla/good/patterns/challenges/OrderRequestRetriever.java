@@ -1,6 +1,7 @@
 package com.kodilla.good.patterns.challenges;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 public class OrderRequestRetriever {
     public OrderRequest retrieve(){
@@ -8,12 +9,16 @@ public class OrderRequestRetriever {
 
         LocalDateTime orderedWhen = LocalDateTime.of(2017, 8,1,12,0);
 
-        Product product = new Wine("Rudolf Muller",100);
-        Product product1 = new Chocolate("Laderach",200);
+        Product wine = new Wine("Rudolf Muller",100);
+        Product chocolate = new Chocolate("Laderach",200);
 
-        Basket basket = new Basket();
-        basket.products.add(product);
-        basket.products.add(product1);
+        GlutenFreeShop glutenFreeShop = new GlutenFreeShop();
+        glutenFreeShop.process(wine);
+        List orders=glutenFreeShop.basket.products;
+
+        Basket basket=new Basket();
+
+        basket.orders.put(glutenFreeShop,orders);
 
         return new OrderRequest(client,orderedWhen,basket);
     }

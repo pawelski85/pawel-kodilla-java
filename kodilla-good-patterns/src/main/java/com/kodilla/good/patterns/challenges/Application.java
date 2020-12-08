@@ -7,7 +7,7 @@ public class Application {
 
 
         OrderProcessor orderProcessor = new OrderProcessor(new MailService(), new ProductOrderService(), new ProductOrderRepository());
-        orderProcessor.process(orderRequest);
+        orderProcessor.execute(orderRequest);
 
     }
 }
