@@ -11,8 +11,7 @@ public class MailService implements InformationService {
 
         System.out.println(client);
 
-        basket.orders.keySet().stream()
-                .map(Shop::toString)
+        basket.orders.entrySet().stream()
                 .forEach(System.out::println);
 
     }
