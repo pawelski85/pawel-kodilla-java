@@ -1,22 +1,20 @@
 package com.kodilla.good.patterns.challenges.shopProvider;
 
 public class ShopProvider {
-    private String shopName;
 
-    public ShopProvider(String shopName) {
-        this.shopName = shopName;
+    private final String shopName;
+
+    public ShopProvider(OrderRequest orderRequest) {
+        this.shopName = orderRequest.getShopName();
+    }
+
+    public Shop create() {
         if (this.shopName.equals("GlutenFreeShop")) {
-            new GlutenFreeShop();
+            return new GlutenFreeShop();
+        } else {
+            return new HealthyShop();
         }
     }
-//    public Shop create() {
-//        if (this.shopName.equals("GlutenFreeShop")) {
-//            return new GlutenFreeShop();
-//        } else {
-//            return new HealthyShop();
-//        }
-//    }
-//}
 
     @Override
     public String toString() {

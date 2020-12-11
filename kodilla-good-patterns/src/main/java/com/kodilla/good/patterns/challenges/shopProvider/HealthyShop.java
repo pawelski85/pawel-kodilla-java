@@ -6,8 +6,6 @@ public class HealthyShop implements Shop {
 
     @Override
     public void process(OrderRequest orderRequest){
-
+        System.out.println("Hello HealthyShop");
     }
-
-
 }

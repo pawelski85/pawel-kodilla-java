@@ -8,16 +8,17 @@ public class OrderRequest {
     private Client client = new Client("Jan", "Kowalski");
     Product wine = new Wine("wino", 1000);
     Product chocolate = new Chocolate("Laderach", 50);
-//    private String shopName = "glutenFreeShop";
-    ShopProvider shopProvider=new ShopProvider("GlutenFreeShop");
+    private String shopName = "GlutenFreeShop";
+    // private String shopName = "HealthyShop";
+
 
     public Client getClient() {
         return client;
     }
 
-//    public String getShopName() {
-//        return shopName;
-//    }
+    public String getShopName() {
+        return shopName;
+    }
 
     @Override
     public String toString() {
