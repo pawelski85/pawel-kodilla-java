@@ -34,21 +34,12 @@ public class FlightsConnections {
 
     public static void findInterConnection() {
 
-        System.out.println("Insert departure city");
-        String departure = getDeparture();
         System.out.println("Insert inter connection city");
         String interConnection= getInterConnection();
-        System.out.println("Insert arrival city");
-        String arrival = getArrival();
 
         Flights.getFlightsList().stream()
-                .filter(n->n.getFrom().equals(departure))
-                .filter(n->n.getTo().equals(interConnection))
+                .filter(n->n.getFrom().equals(interConnection)|n.getTo().equals(interConnection))
                 .forEach(System.out::println);
 
-        Flights.getFlightsList().stream()
-                .filter(n->n.getFrom().equals(interConnection))
-                .filter(n->n.getTo().equals(arrival))
-                .forEach(System.out::println);
     }
 }
